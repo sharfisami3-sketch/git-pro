@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المستويات - موقع تعلم الذكاء الاصطناعي</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body dir="rtl">
+
+<header>
+  <h1>موقع تعلم الذكاء الاصطناعي</h1>
+</header>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#">جامعة الذكاء الاصطناعي</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="levels.html" class="active">المستويات</a></li>
+      <li><a href="about.html">حول</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+    <button class="toggle-btn">☰</button>
+  </div>
+</nav>
+
+<div class="page-container levels-page">
+  <main class="content">
+    <h2>المستويات الدراسية</h2>
+    <p>اختر المستوى والمواد التي تريد تعلمها من القائمة أدناه:</p>
+
+    <!-- المستوى الأول -->
+    <section class="level">
+      <h3>المستوى الأول</h3>
+      <ul>
+        <li>الترم الأول: <a href="#">مقدمة في الحاسوب</a>, <a href="#">البرمجة الأساسية</a></li>
+        <li>الترم الثاني: <a href="#">رياضيات أساسية</a>, <a href="#">مبادئ الذكاء الاصطناعي</a></li>
+      </ul>
+    </section>
+
+    <!-- المستوى الثاني -->
+    <section class="level">
+      <h3>المستوى الثاني</h3>
+      <ul>
+        <li>الترم الأول: <a href="#">برمجة متقدمة للذكاء الاصطناعي</a>, <a href="#">رياضيات متقدمة</a></li>
+        <li>الترم الثاني: <a href="#">التعلم الآلي</a>, <a href="#">معالجة الصور</a></li>
+      </ul>
+    </section>
+
+    <!-- المستوى الثالث -->
+    <section class="level">
+      <h3>المستوى الثالث</h3>
+      <ul>
+        <li>الترم الأول: <a href="#">التعلم العميق</a>, <a href="#">شبكات الأعصاب</a></li>
+        <li>الترم الثاني: <a href="#">مشروع ذكاء اصطناعي عملي</a>, <a href="#">رؤية الحاسوب</a></li>
+      </ul>
+    </section>
+
+    <!-- المستوى الرابع -->
+    <section class="level">
+      <h3>المستوى الرابع</h3>
+      <ul>
+        <li>الترم الأول: <a href="#">مشروع التخرج في الذكاء الاصطناعي</a>, <a href="#">التعلم المعزز</a></li>
+        <li>الترم الثاني: <a href="#">بحث علمي في الذكاء الاصطناعي</a>, <a href="#">أنظمة الذكاء الاصطناعي الذكية</a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const btn = document.querySelector('.toggle-btn');
+const sidebar = document.querySelector('.sidebar');
+
+btn.addEventListener('click', () => {
+  if (sidebar) sidebar.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

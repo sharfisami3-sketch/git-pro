@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حول - موقع تعلم الذكاء الاصطناعي</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body dir="rtl">
+
+<header>
+  <h1>موقع تعلم الذكاء الاصطناعي</h1>
+</header>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#">جامعة الذكاء الاصطناعي</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="levels.html">المستويات</a></li>
+      <li><a href="about.html" class="active">حول</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+    <button class="toggle-btn">☰</button>
+  </div>
+</nav>
+
+<div class="page-container about-page">
+  <main class="content">
+    <h2>حول الموقع</h2>
+    <p>
+      مرحبًا بكم في موقع <strong>تعلم الذكاء الاصطناعي</strong>، الموقع المخصص لتعليم مفاهيم الذكاء الاصطناعي 
+      من المستوى الأول حتى المستوى الرابع. يهدف الموقع إلى تزويد الطلاب بالمحتوى التعليمي المتكامل، من 
+      البرمجة الأساسية، التعلم الآلي، الشبكات العصبية، وحتى مشاريع الذكاء الاصطناعي العملية.
+    </p>
+
+    <h3>أهداف الموقع</h3>
+    <ul>
+      <li>توفير محتوى تعليمي شامل يغطي جميع مستويات الذكاء الاصطناعي.</li>
+      <li>تقديم شروحات عملية ومبسطة مع أمثلة تفاعلية للطلاب.</li>
+      <li>تشجيع الطلاب على تطبيق مشاريع عملية لتعزيز الفهم.</li>
+      <li>تسهيل الوصول للمعلومات بطريقة منظمة وممتعة.</li>
+    </ul>
+
+    <h3>الفريق المسؤول</h3>
+    <ul>
+      <li>مالك شرفي - مصمم ومطور الموقع</li>
+      <li>فريق المحتوى التعليمي - إعداد الدروس والمشاريع العملية</li>
+      <li>فريق الدعم الفني - الرد على الاستفسارات ومتابعة الطلبات</li>
+    </ul>
+
+    <p>نأمل أن يكون هذا الموقع مفيدًا لكم ويساعدكم على تطوير مهاراتكم في الذكاء الاصطناعي.</p>
+  </main>
+</div>
+
+<script>
+const btn = document.querySelector('.toggle-btn');
+const sidebar = document.querySelector('.sidebar');
+
+btn.addEventListener('click', () => {
+  if (sidebar) sidebar.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

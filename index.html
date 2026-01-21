@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع تعلم الذكاء الاصطناعي</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>موقع تعلم الذكاء الاصطناعي</h1>
+</header>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="#">AI University</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="levels/level1.html">المستويات</a></li>
+      <li><a href="about.html">حول</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+    <button class="toggle-btn">☰</button>
+  </div>
+</nav>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <h3>مقررات المستوى الأول</h3>
+    <ul>
+      <li><a href="#">الترم الأول</a></li>
+      <li><a href="#">الترم الثاني</a></li>
+    </ul>
+
+    <h3>مقررات المستوى الثاني</h3>
+    <ul>
+      <li><a href="#">الترم الأول</a></li>
+      <li><a href="#">الترم الثاني</a></li>
+    </ul>
+
+    <h3>مقررات المستوى الثالث</h3>
+    <ul>
+      <li><a href="#">الترم الأول</a></li>
+      <li><a href="#">الترم الثاني</a></li>
+    </ul>
+
+    <h3>مقررات المستوى الرابع</h3>
+    <ul>
+      <li><a href="#">الترم الأول</a></li>
+      <li><a href="#">الترم الثاني</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h2>مرحبًا بك في موقع تعلم الذكاء الاصطناعي</h2>
+    <p>اختر المستوى والموضوع الذي تريد تعلمه من القائمة الجانبية.</p>
+  </main>
+</div>
+
+<script>
+const btn = document.querySelector('.toggle-btn');
+const sidebar = document.querySelector('.sidebar');
+
+btn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
