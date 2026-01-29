@@ -32,7 +32,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+    flex-direction: row-reverse;
 }
 
 .logo a {
@@ -79,7 +79,7 @@ header{
 /* Sidebar */
 .sidebar {
   flex: 1 1 250px;
-  background-color: #f1f1f1;
+  background-color: #f1f1f193;
   padding: 1rem;
   border-radius: 8px;
   font-size: 1rem;
@@ -117,6 +117,7 @@ header{
 .content {
   flex: 3 1 600px;
   padding: 1rem;
+  margin-right: 150px;
 }
 
 /* ===== Media Queries ===== */
@@ -125,17 +126,17 @@ header{
     flex-direction: column;
   }
 .sidebar {
-  width: 250px;
+    width: 180px;
   height: 100vh;
-  background-color: #18060600;
+  background-color: color(prophoto-rgb 0.06 0.04 0.03 / 0.11);
   color: rgba(27, 27, 26, 0.87);
   position: fixed;
-  left: -250px; /* مخفية خارج الشاشة */
-  transition: left 0.3s;
+  right: -250px;/* مخفية خارج الشاشة */
+  transition: right 0.3s;
 }
 
 .sidebar.active {
-  left: 0; /* تصبح مرئية */
+     right: 0; /* تصبح مرئية */
 }
 
   .content {
