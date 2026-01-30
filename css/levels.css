@@ -1,165 +1,36 @@
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* الإعدادات العامة */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; direction: rtl; }
+
+/* النافبار الرئيسي */
+.navbar { background-color: #2c3e50; padding: 10px 0; position: sticky; top: 0; z-index: 1001; }
+.nav-container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+.logo a { color: white; text-decoration: none; font-weight: bold; font-size: 20px; }
+.nav-links { list-style: none; display: flex; gap: 15px; }
+.nav-links li a { color: #ecf0f1; text-decoration: none; display: flex; align-items: center; gap: 5px; padding: 8px 12px; border-radius: 5px; }
+.nav-links li a:hover, .nav-links li a.active { background-color: #34495e; color: #3498db; }
+
+/* شريط المستويات السريع */
+.levels-nav { background-color: #ffffff; border-bottom: 2px solid #3498db; padding: 10px 0; position: sticky; top: 55px; z-index: 1000; text-align: center; }
+.level-link { display: inline-block; padding: 6px 15px; margin: 0 5px; text-decoration: none; color: #555; background: #f1f3f5; border-radius: 20px; font-size: 14px; transition: 0.3s; font-weight: bold; }
+.level-link:hover, .level-link.active-level { background-color: #3498db; color: white; }
+
+/* الهيدر والتخطيط */
+header { background-color: rgb(71, 161, 240); padding: 30px; text-align: center; color: white; }
+.page-container { display: flex; width: 95%; max-width: 1400px; margin: 20px auto; gap: 20px; }
+.sidebar { flex: 0 0 280px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.term-title { background: #f1f3f5; padding: 8px; margin: 15px 0 10px; font-weight: bold; border-radius: 6px; }
+.subjects-list { list-style: none; }
+.subjects-list li a { text-decoration: none; color: #34495e; display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 8px; transition: 0.3s; }
+.subjects-list li a:hover { background: #3498db; color: white; }
+.content { flex: 1; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+/* وضع الهاتف */
+@media (max-width: 768px) {
+    .nav-links .text { display: none; }
+    .nav-links .icon { font-size: 22px; }
+    .page-container { flex-direction: column; }
+    .sidebar { width: 100%; }
 }
 
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* ===== Header ===== */
-header{
-  background-color: rgb(71, 161, 240);
-  padding: 10px;
-  text-align: center;
-  font-size: 30px;
-  color: white;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-  background-color: #2c3e5007;
-}
-
-.nav-container {
-   background-color: #848677e7;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.logo a {
-  color: #ffffff;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 15px;
-  padding: 5px 8px;
-  border-radius: 5px;
-}
-
-.nav-links li a:hover {
-  background-color: #34495e;
-}
-
-.toggle-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-/* ===== Page Layout ===== */
-.page-container {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-  width:20%;
-  flex: 1 1 250px;
-  background-color: #f1f1f1;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.sidebar h3 {
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
-
-.sidebar ul li {
-  margin-bottom: 8px;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #34495e;
-  display: block;
-  padding: 6px;
-  border-radius: 5px;
-}
-
-.sidebar ul li a:hover {
-  background-color: #3498db;
-  color: white;
-}
-
-/* Main Content */
-.content {
-  flex: 3 1 600px;
-  padding: 1rem;
-}
-
-/* ===== Media Queries للشاشات الصغيرة ===== */
-@media screen and (max-width: 1024px) {
-  .page-container {
-    flex-direction: column; /* تخطيط عمودي */
-  }
-
-  .sidebar {
-    width: 100%;
-    order: 2;
-    display: none; /* تبدأ مخفية */
-    transition: all 0.3s ease; /* ظهور/اختفاء سلس */
-  }
-
-  .sidebar.active {
-    display: block; /* عند الضغط على الزر */
-  }
-
-  .content {
-    width: 100%;
-    order: 1;
-  }
-
-  /* زر القائمة ☰ يظهر فقط على الشاشات الصغيرة */
-  .toggle-btn {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px; /* في RTL، يبقى في اليمين */
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* اخفاء الروابط الرئيسية في Navbar */
-  .nav-links {
-    display: none;
-  }
-}
-
+#darkToggle { position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px; border-radius: 50%; background: #2c3e50; color: white; border: none; cursor: pointer; z-index: 2000; }
