@@ -1,0 +1,16 @@
+{
+  "short_name": "AI Learning",
+  "name": "موقع تعلم الذكاء الاصطناعي",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#000000"
+}
