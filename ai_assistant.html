@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المساعد الذكي | جامعة صنعاء</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .assistant-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .assistant-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 20px 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .assistant-header h1 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .assistant-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            min-height: 550px;
+            background: #fff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .fallback-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: #ffe6e6;
+            color: #b91c1c;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .assistant-header h1 { font-size: 1.4rem; }
+            .iframe-wrapper { height: 65vh; min-height: 450px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="assistant-container">
+    <div class="assistant-header">
+        <h1>
+            <span>🤖</span> المساعد التعليمي الذكي
+            <span>📚</span>
+        </h1>
+        <p>اطرح سؤالك عن HTML، CSS، JavaScript – سأجيبك من محاضرات جامعة صنعاء</p>
+    </div>
+    <div class="iframe-wrapper">
+        <iframe 
+            src="https://ai-tutor-web-app-8dxcllrza2ompibgliff7k.streamlit.app/" 
+            title="AI Tutor Assistant"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy">
+        </iframe>
+        <div class="fallback-message" id="fallbackMsg">
+            ⚠️ لم يتم تحميل المساعد الذكي. تأكد من اتصالك بالإنترنت أو حاول مرة أخرى لاحقاً.
+        </div>
+    </div>
+</div>
+
+<script>
+    const iframe = document.querySelector('iframe');
+    const fallback = document.getElementById('fallbackMsg');
+    let iframeLoaded = false;
+
+    iframe.onload = () => {
+        iframeLoaded = true;
+        fallback.style.display = 'none';
+    };
+
+    iframe.onerror = () => {
+        iframe.style.display = 'none';
+        fallback.style.display = 'block';
+    };
+
+    // بعد 8 ثوانٍ إذا لم يتم تحميل iframe نعرض رسالة
+    setTimeout(() => {
+        if (!iframeLoaded) {
+            iframe.style.display = 'none';
+            fallback.style.display = 'block';
+        }
+    }, 8000);
+</script>
+
+</body>
+</html>
